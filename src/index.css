@@ -1,18 +1,17 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  /* 色やレンダリング系だけ残す */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* リンクのデフォルトはお好みで */
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,19 +21,20 @@ a:hover {
   color: #535bf2;
 }
 
+/* ★ここが一番大事：flex と place-items をやめる */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #020617; /* App と合わせておく */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* #root を画面いっぱいに広げる */
+#root {
+  width: 100%;
 }
 
+/* おまけ：ボタンの初期スタイル（必要なら残す） */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -52,17 +52,4 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

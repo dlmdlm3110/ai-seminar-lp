@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Users, CheckCircle2, AlertCircle, ArrowRight, Zap, GraduationCap, Trophy } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, CheckCircle2, AlertCircle, ArrowRight, Zap, GraduationCap, Trophy, Code, Laptop } from 'lucide-react';
 
 const App: React.FC = () => {
   // CORRECTED: Changed /edit to /viewform so users can submit the form
@@ -102,7 +102,7 @@ const App: React.FC = () => {
               "ネットの情報だけでなく、直接会って疑問を解決したい"
             ].map((item, i) => (
               <div key={i} className="bg-slate-800 p-6 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition duration-300">
-                <div className="w-10 h-10 bg-slate-950 rounded-full flex items-center justify-center mb-4 text-cyan-400 font-bold border border-slate-700">
+                <div className="w-10 h-10 bg-slate-950 rounded-full flex items-center justify-center mb-4 text-cyan-400 font-bold border border-slate-700 mx-auto md:mx-0">
                   {i + 1}
                 </div>
                 <p className="font-medium text-lg leading-relaxed">{item}</p>
@@ -114,58 +114,62 @@ const App: React.FC = () => {
 
       {/* Solution / Content Section */}
       <section className="py-24 bg-[#020617] relative">
-         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
-            <div className="w-full lg:w-1/2">
-               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-snug">
+         <div className="max-w-5xl mx-auto px-4">
+          {/* Layout changed to single column centered with strict alignment classes */}
+          <div className="flex flex-col gap-20 items-center w-full">
+            
+            <div className="w-full text-center flex flex-col items-center">
+               <h2 className="text-3xl sm:text-4xl font-black mb-6 leading-snug text-center">
                  <span className="text-fuchsia-500">90分</span>で<br />
                  AIを<span className="text-cyan-400 underline decoration-4 decoration-cyan-400/30 underline-offset-4">最強のパートナー</span>にする。
                </h2>
-               <p className="text-slate-400 mb-8 leading-relaxed text-lg">
+               <p className="text-slate-400 mb-10 leading-relaxed text-lg max-w-2xl mx-auto text-center">
                  難しい専門用語は使いません。明日から使える実践的なテクニックを中心に、
                  ビジネス現場での具体的な活用事例をご紹介します。
                </p>
-               <ul className="space-y-6">
-                 {[
-                   "ChatGPT・Geminiの基本操作と違い",
-                   "劇的に業務効率が上がるプロンプト（指示出し）のコツ",
-                   "AIを使ったアイデア出しと資料作成の実演",
-                   "質疑応答＆個別相談タイム"
-                 ].map((feature, idx) => (
-                   <li key={idx} className="flex items-start gap-3 bg-slate-900/50 p-4 rounded-xl border border-slate-800">
-                     <CheckCircle2 className="text-green-500 w-6 h-6 flex-shrink-0 mt-0.5" />
-                     <span className="text-lg font-medium">{feature}</span>
-                   </li>
-                 ))}
-               </ul>
+               <div className="inline-block text-left bg-slate-900/50 p-6 rounded-2xl border border-slate-800 max-w-3xl w-full mx-auto">
+                 <ul className="grid sm:grid-cols-2 gap-4">
+                   {[
+                     "ChatGPT・Geminiの基本操作と違い",
+                     "劇的に業務効率が上がるプロンプト",
+                     "AIを使ったアイデア出しと資料作成",
+                     "質疑応答＆個別相談タイム"
+                   ].map((feature, idx) => (
+                     <li key={idx} className="flex items-start gap-3">
+                       <CheckCircle2 className="text-green-500 w-6 h-6 flex-shrink-0 mt-0.5" />
+                       <span className="text-lg font-medium">{feature}</span>
+                     </li>
+                   ))}
+                 </ul>
+               </div>
             </div>
             
-            {/* Lecturer Profile Section - Updated based on image */}
-            <div className="w-full lg:w-1/2 relative">
+            {/* Lecturer Profile Section - Centered Layout */}
+            <div className="w-full max-w-3xl relative mx-auto">
               <div className="absolute -inset-1 bg-gradient-to-br from-cyan-500 via-blue-500 to-fuchsia-500 rounded-[2rem] blur-lg opacity-40"></div>
-              <div className="bg-[#0f172a] border border-slate-700 rounded-[2rem] p-8 md:p-10 relative shadow-2xl">
+              <div className="bg-[#0f172a] border border-slate-700 rounded-[2rem] p-8 md:p-12 relative shadow-2xl text-center">
                  
-                 <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
+                 <div className="flex flex-col items-center gap-6 mb-8">
                    <div className="relative group">
                      <div className="absolute -inset-1 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition"></div>
-                     <div className="relative w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-700 rounded-full flex items-center justify-center shadow-inner ring-4 ring-[#0f172a]">
+                     <div className="relative w-36 h-36 bg-gradient-to-br from-cyan-500 to-blue-700 rounded-full flex items-center justify-center shadow-inner ring-4 ring-[#0f172a]">
                         <GraduationCap className="w-16 h-16 text-white" />
                      </div>
                    </div>
-                   <div className="text-center sm:text-left flex-1">
-                     <h3 className="text-3xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-cyan-100 neon-text-blue">
+                   <div className="flex-1 w-full">
+                     <h3 className="text-3xl sm:text-4xl font-black mb-3 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-cyan-100 neon-text-blue text-center">
                        齊藤 友二
                      </h3>
-                     <p className="text-cyan-400 font-bold mb-1">AIビジネスコンサルタント</p>
-                     <p className="text-cyan-400 font-bold mb-4">ChatGPT活用コンサルタント</p>
-                     <p className="text-slate-300 text-sm leading-relaxed">
+                     <p className="text-cyan-400 font-bold mb-1 text-lg text-center">AIビジネスコンサルタント</p>
+                     <p className="text-cyan-400 font-bold mb-6 text-lg text-center">ChatGPT活用コンサルタント</p>
+                     <p className="text-slate-300 leading-relaxed max-w-xl mx-auto text-center">
                        AIビジネス支援パートナーとして、中小企業の皆様にAI活用のノウハウを提供しています。
                      </p>
                    </div>
                  </div>
 
-                 <div className="bg-slate-900/80 rounded-xl border border-slate-700 p-6">
-                    <h4 className="flex items-center gap-2 text-lg font-bold text-cyan-400 mb-4 border-b border-slate-700 pb-2">
+                 <div className="bg-slate-900/80 rounded-xl border border-slate-700 p-8 text-left max-w-2xl mx-auto">
+                    <h4 className="flex items-center justify-center gap-2 text-lg font-bold text-cyan-400 mb-6 border-b border-slate-700 pb-2">
                       <Trophy className="w-5 h-5" />
                       実績・経験
                     </h4>
