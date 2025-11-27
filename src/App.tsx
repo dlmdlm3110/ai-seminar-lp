@@ -1,6 +1,16 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Users, CheckCircle2, AlertCircle, ArrowRight, Zap, GraduationCap, Trophy, Code, Laptop } from 'lucide-react';
-
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Users,
+  CheckCircle2,
+  AlertCircle,
+  ArrowRight,
+  Zap,
+  GraduationCap,
+  Trophy
+} from 'lucide-react';
 const App: React.FC = () => {
   // CORRECTED: Changed /edit to /viewform so users can submit the form
   const FORM_URL = "https://docs.google.com/forms/d/1SdVnk-hPYvTgWS0bFfaKbMReLxPc2VGGZWI25GIx4S8/viewform";
