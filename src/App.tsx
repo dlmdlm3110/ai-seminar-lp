@@ -73,7 +73,7 @@ const App: React.FC = () => {
                <Clock className="text-cyan-500 w-6 h-6" />
                <div className="text-left">
                 <span className="text-xs text-slate-400 block">時間</span>
-                <span className="font-bold text-xl font-mono">13:00 - 14:30</span>
+                <span className="font-bold text-xl font-mono">13:20 - 14:30</span>
               </div>
             </div>
           </div>
